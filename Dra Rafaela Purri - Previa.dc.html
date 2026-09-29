@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Harmonização Facial em BH | Dra. Rafaela Purri — Biomédica Esteta</title>
+<meta name="description" content="Harmonização facial com precisão & planejamento em Belo Horizonte. Dra. Rafaela Purri, Biomédica Esteta CRBM-3 18357. Conheça também o Mundo RP, formação para profissionais da estética.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Montserrat:ital,wght@0,300..600;1,300..500&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F4F1;color:#111;font-family:Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#3D1A5B;text-decoration:none}
+a:hover{color:#2A0F3D}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:20;background:rgba(42,15,61,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(183,155,224,.18)">
+  <div style="max-width:1280px;margin:0 auto;padding:10px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <a href="#topo" style="display:flex;align-items:center;gap:12px;color:#F6F4F1">
+      <span style="font-family:'Pinyon Script',cursive;font-size:34px;line-height:1;color:#B79BE0;padding-top:4px">RP</span>
+      <span style="display:flex;flex-direction:column;gap:3px">
+        <span style="font:500 12px/1 Montserrat,sans-serif;letter-spacing:.24em">DRA. RAFAELA PURRI</span>
+        <span style="font:italic 300 10px/1 Montserrat,sans-serif;letter-spacing:.18em;color:#B79BE0">BIOMÉDICA ESTETA · CRBM-3 18357</span>
+      </span>
+    </a>
+    <div style="display:flex;padding:3px;border:1px solid rgba(183,155,224,.35);border-radius:999px">
+      <button onClick="{{ goPac }}" style="border:0;cursor:pointer;border-radius:999px;padding:10px 16px;min-height:40px;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.16em;background:{{ pacBg }};color:{{ pacFg }};transition:background .3s,color .3s">PACIENTE</button>
+      <button onClick="{{ goAlu }}" style="border:0;cursor:pointer;border-radius:999px;padding:10px 16px;min-height:40px;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.16em;background:{{ aluBg }};color:{{ aluFg }};transition:background .3s,color .3s">ALUNA</button>
+    </div>
+  </div>
+</header>
+
+<section id="topo" data-screen-label="01 Hero" style="background:radial-gradient(120% 80% at 85% 0%,#3D1A5B 0%,#2A0F3D 55%,#210a31 100%);color:#F6F4F1;padding:clamp(48px,8vw,96px) clamp(20px,5vw,72px) clamp(40px,6vw,72px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,80px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span style="font:italic 300 12px/1.4 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">HARMONIZAÇÃO FACIAL · BELO HORIZONTE</span>
+      <sc-if value="{{ headA }}" hint-placeholder-val="{{ true }}">
+        <h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(48px,8.4vw,112px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance">Nasci para fazer <span style="display:block;font-family:'Pinyon Script',cursive;text-transform:none;color:#B79BE0;font-weight:400;font-size:1.12em;line-height:1.05;letter-spacing:0;margin-top:.06em">Arte.</span></h1>
+      </sc-if>
+      <sc-if value="{{ headB }}" hint-placeholder-val="{{ false }}">
+        <h1 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(44px,7.2vw,96px);line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-wrap:balance">Um rosto <span style="font-family:'Pinyon Script',cursive;color:#B79BE0;font-weight:400;text-transform:none">&amp;</span> um mundo de possibilidades.</h1>
+      </sc-if>
+      <p style="margin:0;max-width:30em;font:300 clamp(16px,1.5vw,19px)/1.6 Montserrat,sans-serif;color:rgba(246,244,241,.86);text-wrap:pretty">Harmonização facial com precisão &amp; planejamento. E a formação de profissionais que querem fazer o mesmo.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;font:italic 400 11px/1.4 Montserrat,sans-serif;letter-spacing:.2em;color:#B79BE0">
+        <span>BIOMÉDICA ESTETA</span><span>CRBM-3 18357</span><span>CLÍNICA PRÓPRIA EM BH</span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center">
+      <div style="width:min(100%,420px);aspect-ratio:4/5;border-radius:999px 999px 0 0;background:repeating-linear-gradient(135deg,rgba(183,155,224,.16) 0 10px,rgba(183,155,224,0) 10px 20px);border:1px solid rgba(183,155,224,.4);display:flex;align-items:flex-end;justify-content:center;padding:24px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#B79BE0;text-align:center">RETRATO DE ESTÚDIO · VESTIDO PRETO<br>(foto profissional da cliente)</div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:clamp(48px,7vw,80px) auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid rgba(183,155,224,.3)">
+    <button onClick="{{ goPac }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:14px;padding:32px 28px 36px 0;border-bottom:1px solid rgba(183,155,224,.3);transition:padding .35s,background .35s" style-hover="padding-left:20px;background:rgba(183,155,224,.08)">
+      <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">01 · PARA PACIENTES</span>
+      <span style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:'Bodoni Moda',serif;font-size:clamp(28px,3.4vw,44px);line-height:1;text-transform:uppercase;color:#F6F4F1">Quero ser paciente <span style="font-family:Montserrat,sans-serif;font-weight:300;color:#B79BE0">→</span></span>
+      <span style="font:300 15px/1.5 Montserrat,sans-serif;color:rgba(246,244,241,.78)">Avaliação facial com planejamento estratégico.</span>
+    </button>
+    <button onClick="{{ goAlu }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:14px;padding:32px 28px 36px 28px;border-bottom:1px solid rgba(183,155,224,.3);border-left:1px solid rgba(183,155,224,.3);transition:padding .35s,background .35s" style-hover="padding-left:48px;background:rgba(183,155,224,.08)">
+      <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">02 · PARA PROFISSIONAIS · MUNDO RP</span>
+      <span style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:'Bodoni Moda',serif;font-size:clamp(28px,3.4vw,44px);line-height:1;text-transform:uppercase;color:#F6F4F1">Quero ser aluna <span style="font-family:Montserrat,sans-serif;font-weight:300;color:#B79BE0">→</span></span>
+      <span style="font:300 15px/1.5 Montserrat,sans-serif;color:rgba(246,244,241,.78)">Técnica, prática &amp; visão de negócio.</span>
+    </button>
+  </div>
+</section>
+
+<div id="conteudo"></div>
+
+<sc-if value="{{ isPac }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="P1 Manifesto" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#F6F4F1;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,6vw,96px);align-items:end">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">PARA PACIENTES</span>
+        <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(38px,5.6vw,76px);line-height:.98;text-transform:uppercase;text-wrap:balance">O segredo nunca esteve na quantidade.</h2>
+        <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(24px,2.6vw,34px);line-height:1.2;color:#3D1A5B">Está no planejamento.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+        <p style="margin:0;font:400 17px/1.7 Montserrat,sans-serif;color:#111;max-width:32em;text-wrap:pretty">Cada rosto pede um olhar, um planejamento &amp; escolhas diferentes. Por isso, todo atendimento começa por uma avaliação facial completa — para tratar o que precisa, sem perder o que já é seu.</p>
+        <a href="{{ waPac }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 28px;border-radius:999px;background:#2A0F3D;color:#F6F4F1;font:500 12px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s" style-hover="background:#3D1A5B;color:#F6F4F1">AGENDAR MINHA AVALIAÇÃO <span style="color:#B79BE0">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="P2 Metodo" style="padding:0 clamp(20px,5vw,72px) clamp(72px,10vw,120px);background:#F6F4F1;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));border-top:1px solid rgba(42,15,61,.2)">
+      <div style="display:flex;flex-direction:column;gap:14px;padding:36px 28px 0 0">
+        <span style="font-family:'Bodoni Moda',serif;font-size:44px;line-height:1;color:#B79BE0">I</span>
+        <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:26px;text-transform:uppercase">Avaliação</h3>
+        <p style="margin:0;font:400 15px/1.65 Montserrat,sans-serif;color:#111">Um olhar atento para o rosto como um todo: proporções, perfil &amp; expressão.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:36px 28px 0 0">
+        <span style="font-family:'Bodoni Moda',serif;font-size:44px;line-height:1;color:#B79BE0">II</span>
+        <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:26px;text-transform:uppercase">Planejamento</h3>
+        <p style="margin:0;font:400 15px/1.65 Montserrat,sans-serif;color:#111">Um plano estratégico, do ajuste pontual ao full face, com a indicação honesta do que o seu rosto pede.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:36px 28px 0 0">
+        <span style="font-family:'Bodoni Moda',serif;font-size:44px;line-height:1;color:#B79BE0">III</span>
+        <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:26px;text-transform:uppercase">Precisão</h3>
+        <p style="margin:0;font:400 15px/1.65 Montserrat,sans-serif;color:#111">Execução técnica com foco em naturalidade. Pequenos ajustes, grandes mudanças na forma como você se enxerga.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="P3 12ml" style="padding:clamp(80px,11vw,140px) clamp(20px,5vw,72px);background:#2A0F3D;color:#F6F4F1">
+    <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+      <span style="font-family:'Pinyon Script',cursive;font-size:56px;line-height:.6;color:#B79BE0">“</span>
+      <p style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,6vw,84px);line-height:1;text-transform:uppercase;text-wrap:balance">Não se assuste se eu te indicar 12 ml.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px 64px;border-top:1px solid rgba(183,155,224,.3);padding-top:28px">
+        <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:24px;line-height:1.3;color:#B79BE0">Harmonizar não é sobre quantidade. É sobre precisão.</p>
+        <p style="margin:0;font:300 16px/1.7 Montserrat,sans-serif;color:rgba(246,244,241,.86);text-wrap:pretty">Às vezes o certo é pouco; às vezes, é mais. Quem define é o planejamento — nunca um número fixo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="P4 Procedimentos" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#F6F4F1;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,6vw,96px)">
+      <div style="display:flex;flex-direction:column;gap:20px;align-self:start;position:sticky;top:96px">
+        <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">PROCEDIMENTOS</span>
+        <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.6vw,60px);line-height:1;text-transform:uppercase">Cada rosto pede <span style="font-family:'Pinyon Script',cursive;text-transform:none;color:#3D1A5B;font-weight:400">o seu</span> plano.</h2>
+        <p style="margin:0;font:400 15px/1.65 Montserrat,sans-serif;color:#111;max-width:26em">Indicações definidas somente após avaliação. Investimento sob consulta.</p>
+        <a href="{{ waPac }}" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid #2A0F3D;color:#2A0F3D;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s,color .3s" style-hover="background:#2A0F3D;color:#F6F4F1">AGENDAR AVALIAÇÃO →</a>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="align-self:flex-start;font:600 10px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.04em;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">VALIDAR · lista de procedimentos &amp; anúncio de rinomodelação (CFBM)</span></sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(42,15,61,.2)">
+        <sc-for list="{{ procs }}" as="p" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:22px 0;border-bottom:1px solid rgba(42,15,61,.2);transition:padding .3s,background .3s" style-hover="padding-left:14px;background:rgba(183,155,224,.14)">
+            <span style="font:italic 300 13px/1.9 Montserrat,sans-serif;color:#3D1A5B">{{ p.n }}</span>
+            <span style="font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.1;text-transform:uppercase">{{ p.name }}</span>
+            <span></span>
+            <span style="font:italic 300 15px/1.5 Montserrat,sans-serif;color:#111">{{ p.line }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="P5 Resultados" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#EDE7F4;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">RESULTADOS</span>
+          <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1;text-transform:uppercase">Naturalidade <span style="font-family:'Pinyon Script',cursive;text-transform:none;font-weight:400">&amp;</span> precisão.</h2>
+        </div>
+        <p style="margin:0;max-width:26em;font:400 15px/1.65 Montserrat,sans-serif;color:#111">Quando bem feitos, os procedimentos não mudam quem você é. Ajudam a preservar o que você já tem de bonito.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,rgba(42,15,61,.07) 0 10px,rgba(42,15,61,0) 10px 20px);border:1px solid rgba(42,15,61,.18);display:flex;align-items:flex-end;justify-content:center;padding:20px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#3D1A5B;text-align:center">ANTES &amp; DEPOIS · LÁBIOS<br>(perfil, touca de cetim lilás)</div>
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,rgba(42,15,61,.07) 0 10px,rgba(42,15,61,0) 10px 20px);border:1px solid rgba(42,15,61,.18);display:flex;align-items:flex-end;justify-content:center;padding:20px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#3D1A5B;text-align:center">ANTES &amp; DEPOIS · CONTORNO<br>(frente, touca de cetim lilás)</div>
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,rgba(42,15,61,.07) 0 10px,rgba(42,15,61,0) 10px 20px);border:1px solid rgba(42,15,61,.18);display:flex;align-items:flex-end;justify-content:center;padding:20px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#3D1A5B;text-align:center">ANTES &amp; DEPOIS · PERFIL<br>(perfiloplastia, touca lilás)</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <p style="margin:0;font:italic 300 12px/1.5 Montserrat,sans-serif;letter-spacing:.06em;color:#3D1A5B">Imagens publicadas com autorização das pacientes. Resultados variam de pessoa para pessoa.</p>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.04em;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">VALIDAR COM A CLIENTE · autorização + regras CFBM</span></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="P6 Laser Day" style="padding:clamp(40px,6vw,64px) clamp(20px,5vw,72px);background:#3D1A5B;color:#F6F4F1">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
+        <span style="font:600 11px/1 Montserrat,sans-serif;letter-spacing:.2em;background:#E3C04A;color:#111;padding:9px 14px;border-radius:999px">AGENDA ABERTA</span>
+        <span style="font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(26px,3.6vw,44px);line-height:1;text-transform:uppercase">Laser Day · 21 <span style="font-family:'Pinyon Script',cursive;text-transform:none;color:#B79BE0;font-weight:400">&amp;</span> 22 de outubro</span>
+      </div>
+      <a href="{{ waLaser }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:50px;padding:0 26px;border-radius:999px;background:#B79BE0;color:#2A0F3D;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s" style-hover="background:#F6F4F1;color:#2A0F3D">RESERVAR MEU HORÁRIO →</a>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isAlu }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="A1 Mundo RP" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#CFC3B5;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+        <span style="font-family:'Bodoni Moda',serif;font-weight:600;font-size:15px;letter-spacing:.34em">MUNDO RP</span>
+        <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(38px,5.4vw,74px);line-height:.98;text-transform:uppercase;text-wrap:balance">Tudo para se tornar uma profissional completa.</h2>
+        <p style="margin:0;font:italic 400 17px/1.7 Montserrat,sans-serif;color:#111;max-width:32em;text-wrap:pretty">Um ecossistema de formação que une técnica, prática &amp; visão de crescimento — criado por quem atende na própria clínica e sabe o que enche uma agenda.</p>
+        <a href="{{ waAlu }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 28px;border-radius:999px;background:#2A0F3D;color:#F6F4F1;font:500 12px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s" style-hover="background:#3D1A5B;color:#F6F4F1">QUERO CONHECER OS CURSOS <span style="color:#B79BE0">→</span></a>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div style="width:min(100%,400px);aspect-ratio:4/5;border-radius:999px 999px 0 0;background:#E4DBD0;border:1px solid rgba(42,15,61,.15);display:flex;align-items:flex-end;justify-content:center;padding:24px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#3D1A5B;text-align:center;background-image:repeating-linear-gradient(135deg,rgba(42,15,61,.06) 0 10px,rgba(42,15,61,0) 10px 20px)">RAFA EM AULA · ARCO &amp; PEDESTAL<br>(foto do Mundo RP)</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="A2 Estrategia" style="padding:clamp(80px,11vw,140px) clamp(20px,5vw,72px);background:#2A0F3D;color:#F6F4F1">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+      <h2 style="margin:0;max-width:14em;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,5.8vw,80px);line-height:1;text-transform:uppercase;text-wrap:balance">O problema não é o algoritmo. <span style="color:#B79BE0">É a falta de estratégia.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0;border-top:1px solid rgba(183,155,224,.3)">
+        <div style="padding:28px 28px 0 0;display:flex;flex-direction:column;gap:10px">
+          <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">VOCÊ JÁ PENSOU</span>
+          <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:26px;line-height:1.25">“Tenho seguidores, mas não vendo.”</p>
+        </div>
+        <div style="padding:28px 28px 0 0;display:flex;flex-direction:column;gap:10px">
+          <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">OU ENTÃO</span>
+          <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:26px;line-height:1.25">“A paciente tem interesse, mas não fecha.”</p>
+        </div>
+        <div style="padding:28px 0 0 0;display:flex;flex-direction:column;gap:10px">
+          <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">A RESPOSTA</span>
+          <p style="margin:0;font:300 16px/1.7 Montserrat,sans-serif;color:rgba(246,244,241,.88)">Se a paciente tem interesse e não fecha, tem algo errado na consulta. Isso se aprende — assim como a técnica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="A3 Trilha" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#F6F4F1;color:#2A0F3D">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">A TRILHA MUNDO RP</span>
+        <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,4.8vw,64px);line-height:1;text-transform:uppercase">Do domínio da técnica <span style="font-family:'Pinyon Script',cursive;text-transform:none;font-weight:400">ao</span> negócio que cresce.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;align-items:stretch">
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px 28px;border:1px solid rgba(42,15,61,.2);background:#fff">
+          <span style="font:italic 300 13px/1 Montserrat,sans-serif;color:#3D1A5B">01</span>
+          <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:30px;line-height:1.05;text-transform:uppercase">Cursos presenciais de HOF</h3>
+          <p style="margin:0;font:italic 400 15px/1.5 Montserrat,sans-serif;color:#111">Para dominar a técnica, com prática em paciente modelo.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ cursos }}" as="c" hint-placeholder-count="9">
+              <span style="font:500 11px/1.3 Montserrat,sans-serif;letter-spacing:.06em;padding:8px 12px;border-radius:999px;border:1px solid rgba(42,15,61,.25);color:#2A0F3D">{{ c }}</span>
+            </sc-for>
+          </div>
+          <a href="{{ waAlu }}" target="_blank" rel="noopener" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid #2A0F3D;color:#2A0F3D;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s,color .3s" style-hover="background:#2A0F3D;color:#F6F4F1">QUERO SABER DAS TURMAS →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px 28px;background:#2A0F3D;color:#F6F4F1;position:relative">
+          <span style="position:absolute;top:-1px;right:24px;font:600 10px/1 Montserrat,sans-serif;letter-spacing:.2em;background:#B79BE0;color:#2A0F3D;padding:8px 10px">PARA QUEM JÁ ATUA</span>
+          <span style="font:italic 300 13px/1 Montserrat,sans-serif;color:#B79BE0">02</span>
+          <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:30px;line-height:1.05;text-transform:uppercase">Purple Mentory</h3>
+          <p style="margin:0;font:italic 400 15px/1.5 Montserrat,sans-serif;color:#B79BE0">Mentoria de negócio para quem já domina a técnica.</p>
+          <div style="display:flex;flex-direction:column;border-top:1px solid rgba(183,155,224,.3)">
+            <span style="padding:12px 0;border-bottom:1px solid rgba(183,155,224,.3);font-family:'Bodoni Moda',serif;font-size:20px;text-transform:uppercase">Faturamento</span>
+            <span style="padding:12px 0;border-bottom:1px solid rgba(183,155,224,.3);font-family:'Bodoni Moda',serif;font-size:20px;text-transform:uppercase">Posicionamento</span>
+            <span style="padding:12px 0;border-bottom:1px solid rgba(183,155,224,.3);font-family:'Bodoni Moda',serif;font-size:20px;text-transform:uppercase">Crescimento</span>
+          </div>
+          <a href="{{ waMent }}" target="_blank" rel="noopener" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;background:#B79BE0;color:#2A0F3D;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s" style-hover="background:#F6F4F1;color:#2A0F3D">QUERO A MENTORIA →</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;padding:32px 28px;border:1px solid rgba(42,15,61,.2);background:#fff">
+          <span style="font:italic 300 13px/1 Montserrat,sans-serif;color:#3D1A5B">03</span>
+          <h3 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:30px;line-height:1.05;text-transform:uppercase">Online</h3>
+          <p style="margin:0;font:italic 400 15px/1.5 Montserrat,sans-serif;color:#111">Para vender melhor, no seu ritmo.</p>
+          <div style="display:flex;flex-direction:column;border-top:1px solid rgba(42,15,61,.2)">
+            <span style="padding:12px 0;border-bottom:1px solid rgba(42,15,61,.2);font-family:'Bodoni Moda',serif;font-size:19px;line-height:1.2;text-transform:uppercase">Aprenda a ter um Instagram que vende</span>
+            <span style="padding:12px 0;border-bottom:1px solid rgba(42,15,61,.2);font-family:'Bodoni Moda',serif;font-size:19px;line-height:1.2;text-transform:uppercase">Consulta que vende</span>
+          </div>
+          <p style="margin:0;font:400 13px/1.6 Montserrat,sans-serif;color:#3D1A5B">E-books: Simplificando o Botox · Quebre o ciclo · Estética segura · Campanhas sazonais · Abrindo portas.</p>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+            <a href="{{ waAlu }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid #2A0F3D;color:#2A0F3D;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.18em;transition:background .3s,color .3s" style-hover="background:#2A0F3D;color:#F6F4F1">VER CURSOS ONLINE →</a>
+            <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">PENDENTE · link Kiwify</span></sc-if>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="A4 Feedback" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#3D1A5B;color:#F6F4F1">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,80px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#B79BE0">FEEDBACK DE ALUNAS</span>
+        <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1;text-transform:uppercase">Excelência não se explica. <span style="font-family:'Pinyon Script',cursive;text-transform:none;color:#B79BE0;font-weight:400">Se vive.</span></h2>
+        <div style="display:flex;flex-direction:column;border-top:1px solid rgba(183,155,224,.3)">
+          <p style="margin:0;padding:24px 0;border-bottom:1px solid rgba(183,155,224,.3);font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.3">“Aplicando suas dicas, só essa semana foram 10 atendimentos marcados.”</p>
+          <p style="margin:0;padding:24px 0;border-bottom:1px solid rgba(183,155,224,.3);font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.3">“Fechei 13 pacientes novas.”</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">VALIDAR · autorização dos prints</span></sc-if>
+          <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">PENDENTE · nº de alunas formadas</span></sc-if>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="aspect-ratio:9/16;background:repeating-linear-gradient(135deg,rgba(183,155,224,.16) 0 10px,rgba(183,155,224,0) 10px 20px);border:1px solid rgba(183,155,224,.4);display:flex;align-items:flex-end;justify-content:center;padding:16px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#B79BE0;text-align:center">PRINT WHATSAPP<br>ALUNA · 01</div>
+        <div style="aspect-ratio:9/16;margin-top:48px;background:repeating-linear-gradient(135deg,rgba(183,155,224,.16) 0 10px,rgba(183,155,224,0) 10px 20px);border:1px solid rgba(183,155,224,.4);display:flex;align-items:flex-end;justify-content:center;padding:16px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#B79BE0;text-align:center">PRINT WHATSAPP<br>ALUNA · 02</div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<section data-screen-label="S Sobre" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#F6F4F1;color:#2A0F3D">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <div style="width:min(100%,440px);aspect-ratio:4/5;border-radius:999px 999px 0 0;background:repeating-linear-gradient(135deg,rgba(42,15,61,.07) 0 10px,rgba(42,15,61,0) 10px 20px);border:1px solid rgba(42,15,61,.18);display:flex;align-items:flex-end;justify-content:center;padding:24px;font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:#3D1A5B;text-align:center">RETRATO · BLUSA FLORAL<br>(estúdio, meio corpo)</div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">QUEM É</span>
+      <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(40px,5.4vw,72px);line-height:.95;text-transform:uppercase">Rafaela Purri <span style="display:block;font-family:'Pinyon Script',cursive;text-transform:none;font-weight:400;font-size:.8em;color:#3D1A5B">Rafa</span></h2>
+      <p style="margin:0;font:400 17px/1.7 Montserrat,sans-serif;color:#111;max-width:32em;text-wrap:pretty">Biomédica esteta, CRBM-3 18357. Há cerca de cinco anos faz da harmonização facial o seu ofício — e, da formação de outras profissionais, a sua missão. Atende em clínica própria em Belo Horizonte, com equipe treinada por ela.</p>
+      <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.25;border-left:0;padding-top:20px;border-top:1px solid rgba(42,15,61,.2)">A profissional que ensina outras profissionais.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;padding:16px 20px;background:#2A0F3D;color:#F6F4F1">
+        <span style="font:600 10px/1 Montserrat,sans-serif;letter-spacing:.2em;color:#B79BE0">NOVA CLÍNICA EM BREVE</span>
+        <span style="font:300 14px/1.5 Montserrat,sans-serif">Estamos em reforma para receber você ainda melhor.</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">PENDENTE · ano exato de formatura</span></sc-if>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">PENDENTE · endereço &amp; data da reinauguração</span></sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="F FAQ" style="padding:clamp(72px,10vw,120px) clamp(20px,5vw,72px);background:#fff;color:#2A0F3D">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,6vw,96px)">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font:italic 400 11px/1 Montserrat,sans-serif;letter-spacing:.24em;color:#3D1A5B">{{ faqKicker }}</span>
+      <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(36px,4.6vw,60px);line-height:1;text-transform:uppercase">Perguntas frequentes</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid rgba(42,15,61,.2)">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-bottom:1px solid rgba(42,15,61,.2)">
+          <button onClick="{{ f.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;min-height:44px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(19px,2vw,24px);line-height:1.25;color:#2A0F3D;transition:color .3s" style-hover="color:#3D1A5B">
+            <span>{{ f.q }}</span>
+            <span style="flex:none;width:32px;height:32px;border-radius:999px;border:1px solid rgba(42,15,61,.3);display:flex;align-items:center;justify-content:center;font:300 18px/1 Montserrat,sans-serif">{{ f.icon }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:0 48px 24px 0;font:400 16px/1.7 Montserrat,sans-serif;color:#111;text-wrap:pretty">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ isPac }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="C CTA paciente" style="padding:clamp(88px,12vw,150px) clamp(20px,5vw,72px);background:radial-gradient(100% 90% at 50% 0%,#3D1A5B 0%,#2A0F3D 60%,#210a31 100%);color:#F6F4F1;text-align:center">
+    <div style="max-width:960px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px">
+      <span style="font-family:'Pinyon Script',cursive;font-size:48px;line-height:1;color:#B79BE0">RP</span>
+      <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(38px,6vw,84px);line-height:1;text-transform:uppercase;text-wrap:balance">Pequenos ajustes. Grandes mudanças.</h2>
+      <p style="margin:0;font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(20px,2.2vw,28px);color:#B79BE0">Na forma como você se enxerga.</p>
+      <a href="{{ waPac }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 34px;border-radius:999px;background:#B79BE0;color:#2A0F3D;font:600 12px/1 Montserrat,sans-serif;letter-spacing:.2em;transition:background .3s" style-hover="background:#F6F4F1;color:#2A0F3D">AGENDAR MINHA AVALIAÇÃO →</a>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center">
+        <p style="margin:0;font:300 14px/1.6 Montserrat,sans-serif;color:rgba(246,244,241,.8)">Quer participar como paciente modelo dos cursos? <a href="#" style="color:#B79BE0;border-bottom:1px solid rgba(183,155,224,.5)">Entre no grupo</a></p>
+        <sc-if value="{{ notes }}" hint-placeholder-val="{{ true }}"><span style="font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#E3C04A;color:#111;padding:4px 7px;border-radius:2px">PENDENTE · link do grupo</span></sc-if>
+      </div>
+    </div>
+  </section>
+</sc-if>
+<sc-if value="{{ isAlu }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="C CTA aluna" style="padding:clamp(88px,12vw,150px) clamp(20px,5vw,72px);background:#CFC3B5;color:#2A0F3D;text-align:center">
+    <div style="max-width:960px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px">
+      <span style="font-family:'Bodoni Moda',serif;font-weight:600;font-size:15px;letter-spacing:.34em">MUNDO RP</span>
+      <h2 style="margin:0;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(34px,5.4vw,76px);line-height:1;text-transform:uppercase;text-wrap:balance">Sua técnica abre a porta. Sua estratégia enche a agenda.</h2>
+      <a href="{{ waAlu }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 34px;border-radius:999px;background:#2A0F3D;color:#F6F4F1;font:600 12px/1 Montserrat,sans-serif;letter-spacing:.2em;transition:background .3s" style-hover="background:#3D1A5B;color:#F6F4F1">QUERO CONHECER OS CURSOS <span style="color:#B79BE0">→</span></a>
+    </div>
+  </section>
+</sc-if>
+
+<footer style="padding:56px clamp(20px,5vw,72px) 112px;background:#111;color:rgba(246,244,241,.72)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="font-family:'Pinyon Script',cursive;font-size:44px;line-height:1;color:#B79BE0">RP</span>
+        <span style="display:flex;flex-direction:column;gap:6px">
+          <span style="font:500 12px/1 Montserrat,sans-serif;letter-spacing:.26em;color:#F6F4F1">DRA. RAFAELA PURRI | BIOMÉDICA ESTETA</span>
+          <span style="font:italic 300 11px/1 Montserrat,sans-serif;letter-spacing:.18em">CRBM-3 18357 · BELO HORIZONTE, MG</span>
+        </span>
+      </div>
+      <nav style="display:flex;flex-wrap:wrap;gap:8px 28px;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.18em">
+        <a href="https://www.instagram.com/drarafaelapurri/" target="_blank" rel="noopener" style="color:#F6F4F1;padding:12px 0" style-hover="color:#B79BE0">INSTAGRAM</a>
+        <a href="{{ waPac }}" target="_blank" rel="noopener" style="color:#F6F4F1;padding:12px 0" style-hover="color:#B79BE0">WHATSAPP</a>
+        <button onClick="{{ goAlu }}" style="all:unset;cursor:pointer;color:#F6F4F1;padding:12px 0;letter-spacing:.18em" style-hover="color:#B79BE0">MUNDO RP</button>
+      </nav>
+    </div>
+    <p style="margin:0;padding-top:24px;border-top:1px solid rgba(246,244,241,.14);font:300 12px/1.7 Montserrat,sans-serif;max-width:60em">Dra. Rafaela Purri é biomédica esteta, registrada no CRBM-3 sob o nº 18357. Os resultados dos procedimentos variam de pessoa para pessoa. As informações deste site não substituem a avaliação individual.</p>
+    <span style="font:italic 300 10px/1 Montserrat,sans-serif;letter-spacing:.2em;color:rgba(246,244,241,.45)">POSICIONAMENTO PROFISSIONAL POR GR ONE</span>
+  </div>
+</footer>
+
+<a href="{{ floatHref }}" target="_blank" rel="noopener" style="position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:30;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;background:#B79BE0;color:#2A0F3D;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.16em;box-shadow:0 24px 60px -24px rgba(42,15,61,.7);transition:transform .3s,background .3s" style-hover="transform:translateY(-2px);background:#F6F4F1;color:#2A0F3D"><span style="width:8px;height:8px;border-radius:999px;background:#2A0F3D"></span>{{ floatLabel }}</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;'A'|'B'&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Revisão&quot;},&quot;startFront&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Paciente&quot;,&quot;Aluna&quot;],&quot;default&quot;:&quot;Paciente&quot;,&quot;tsType&quot;:&quot;'Paciente'|'Aluna'&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  state = { front: this.props.startFront === 'Aluna' ? 'aluna' : 'paciente', faq: -1 };
+  wa(msg) {
+    const num = ''; // [PENDENTE] número no formato 5531XXXXXXXXX para ativar texto pré-preenchido
+    return num ? `https://wa.me/${num}?text=${encodeURIComponent(msg)}` : 'https://wa.me/message/5RVDYIWOZIH7A1';
+  }
+  go(front) {
+    this.setState({ front, faq: -1 }, () => {
+      const el = document.getElementById('conteudo');
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+    });
+  }
+  renderVals() {
+    const isPac = this.state.front === 'paciente';
+    const M = {
+      pac: 'Olá, Dra. Rafaela! Vim pelo site e gostaria de agendar uma avaliação facial.',
+      laser: 'Olá! Vim pelo site e quero reservar um horário no Laser Day (21 ou 22/10).',
+      alu: 'Olá, Rafa! Vim pelo site e quero conhecer os cursos presenciais do Mundo RP.',
+      ment: 'Olá, Rafa! Já atuo na estética e quero saber mais sobre a Purple Mentory.'
+    };
+    const faqPac = [
+      ['Quantos ml eu preciso?', 'Não existe número padrão. A quantidade nasce do planejamento feito na avaliação — às vezes é pouco, às vezes é mais.'],
+      ['Tenho 21 anos. Não sou muito nova?', 'Idade não define indicação; o que define é a avaliação do seu rosto. Às vezes, a melhor resposta é esperar.'],
+      ['Vou ficar artificial?', 'O objetivo é o contrário: preservar os seus traços & tratar apenas o que precisa.'],
+      ['Qual o investimento?', 'Sob consulta. O valor é definido após a avaliação, junto com o seu plano.'],
+      ['Onde é a clínica?', 'Em Belo Horizonte. A clínica está em reforma; o novo endereço é informado no agendamento.'],
+      ['Quem realiza os procedimentos?', 'Dra. Rafaela Purri, biomédica esteta, CRBM-3 18357.']
+    ];
+    const faqAlu = [
+      ['Preciso já atuar na estética?', 'Os cursos presenciais são para dominar a técnica. A Purple Mentory é para quem já domina e quer crescer no negócio.'],
+      ['Os cursos têm prática?', 'Sim. As aulas contam com pacientes modelo.'],
+      ['Quem pode fazer?', 'Profissionais da estética habilitadas para cada procedimento, conforme as regras do seu conselho.'],
+      ['Qual o investimento?', 'Sob consulta. As condições de cada turma são enviadas pelo WhatsApp.'],
+      ['Quando são as próximas turmas?', 'As datas são enviadas pelo WhatsApp. Chame e receba o calendário.']
+    ];
+    const faqs = (isPac ? faqPac : faqAlu).map(([q, a], i) => ({
+      q, a, open: this.state.faq === i, icon: this.state.faq === i ? '−' : '+',
+      toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i }))
+    }));
+    const on = { bg: '#B79BE0', fg: '#2A0F3D' }, off = { bg: 'transparent', fg: '#F6F4F1' };
+    return {
+      isPac, isAlu: !isPac,
+      headA: (this.props.headline ?? 'A') === 'A', headB: this.props.headline === 'B',
+      notes: this.props.showNotes ?? true,
+      goPac: () => this.go('paciente'), goAlu: () => this.go('aluna'),
+      pacBg: isPac ? on.bg : off.bg, pacFg: isPac ? on.fg : off.fg,
+      aluBg: !isPac ? on.bg : off.bg, aluFg: !isPac ? on.fg : off.fg,
+      waPac: this.wa(M.pac), waLaser: this.wa(M.laser), waAlu: this.wa(M.alu), waMent: this.wa(M.ment),
+      floatHref: this.wa(isPac ? M.pac : M.alu),
+      floatLabel: isPac ? 'AGENDAR AVALIAÇÃO' : 'FALAR SOBRE OS CURSOS',
+      faqKicker: isPac ? 'PARA PACIENTES' : 'PARA ALUNAS · MUNDO RP',
+      faqs,
+      procs: [
+        ['Preenchimento labial', 'Um lábio bem feito não passa despercebido.'],
+        ['Toxina botulínica', 'Prevenção é envelhecer da melhor forma possível.'],
+        ['Rinomodelação', 'Proporção & equilíbrio para o perfil.'],
+        ['Perfiloplastia', 'O rosto em harmonia, também de lado.'],
+        ['Malar, mento & mandíbula', 'A moldura do seu rosto.'],
+        ['Full face', 'O rosto planejado como um todo.'],
+        ['Laser', 'Tecnologia a favor da pele.'],
+        ['Corporal', 'O mesmo cuidado, além do rosto.']
+      ].map(([name, line], i) => ({ n: String(i + 1).padStart(2, '0'), name, line })),
+      cursos: ['Perfiloplastia', 'Toxina botulínica', 'Preenchimento labial', 'ELITE · bigode chinês & olheiras', 'ARTE · malar, mento & mandíbula', 'Intradermoterapia', 'Anatomia & intercorrências', 'Microagulhamento', 'Limpeza de pele']
+    };
+  }
+}
+</script>
+</body>
+</html>
