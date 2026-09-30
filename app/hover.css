@@ -1,0 +1,18 @@
+/* Estados de hover do design (style-hover no Claude Design). */
+.hv1:hover{padding-left:20px !important;background:rgba(183,155,224,.08) !important}
+.hv2:hover{padding-left:48px !important;background:rgba(183,155,224,.08) !important}
+.hv3:hover{background:#3D1A5B !important;color:#F6F4F1 !important}
+.hv4:hover{background:#2A0F3D !important;color:#F6F4F1 !important}
+.hv5:hover{padding-left:14px !important;background:rgba(183,155,224,.14) !important}
+.hv6:hover{background:#F6F4F1 !important;color:#2A0F3D !important}
+.hv7:hover{background:#3D1A5B !important;color:#F6F4F1 !important}
+.hv8:hover{background:#2A0F3D !important;color:#F6F4F1 !important}
+.hv9:hover{background:#F6F4F1 !important;color:#2A0F3D !important}
+.hv10:hover{background:#2A0F3D !important;color:#F6F4F1 !important}
+.hv11:hover{color:#3D1A5B !important}
+.hv12:hover{background:#F6F4F1 !important;color:#2A0F3D !important}
+.hv13:hover{background:#3D1A5B !important;color:#F6F4F1 !important}
+.hv14:hover{color:#B79BE0 !important}
+.hv15:hover{color:#B79BE0 !important}
+.hv16:hover{color:#B79BE0 !important}
+.hv17:hover{transform:translateY(-2px) !important;background:#F6F4F1 !important;color:#2A0F3D !important}

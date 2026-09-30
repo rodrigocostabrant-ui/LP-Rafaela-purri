@@ -1,1 +1,12 @@
 *.zip
+node_modules
+.next
+out
+.vercel
+.env*.local
+next-env.d.ts
+*.tsbuildinfo
+.claude-flow
+
+.vercel
+.env*

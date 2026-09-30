@@ -1,0 +1,11 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F6F4F1; color: #111; font-family: var(--font-montserrat), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #3D1A5B; text-decoration: none; }
+a:hover { color: #2A0F3D; }
+* { box-sizing: border-box; }
+:focus-visible { outline: 1px solid #B79BE0; outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
