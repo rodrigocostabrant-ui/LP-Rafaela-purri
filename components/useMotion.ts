@@ -11,6 +11,9 @@ import { useEffect } from "react";
 //  - [data-stack] > [data-card]: cards sticky que diminuem e escurecem quando o próximo cobre.
 //  - [data-count]: contador que sobe até o número real quando o bloco é revelado.
 //  - [data-progress]: barra de progresso da leitura no header.
+//  - [data-illum] [data-iw]: palavras que acendem conforme o bloco atravessa a tela.
+//  - .mq: a faixa de nomes acelera com a velocidade do scroll.
+// usePointer (abaixo) cuida do ponteiro: profundidade [data-depth], cursor e botões com ímã.
 // `key` muda quando a frente Paciente/Aluna troca: as seções montam de novo e o efeito
 // refaz a varredura.
 const STEP = 16; // deslocamento (px) entre cards empilhados — igual ao usado no markup.
@@ -30,6 +33,9 @@ export function useMotion(key: unknown) {
     const prog = document.querySelector<HTMLElement>("[data-progress]");
     const par = reduce ? [] : q("[data-speed],[data-drift]");
     const stacks = reduce ? [] : q("[data-stack]").map((s) => q("[data-card]", s));
+    const illum = q("[data-illum]").map((p) => q("[data-iw]", p));
+    const mqAnim = () => document.querySelector<HTMLElement>(".mq")?.getAnimations()[0];
+    let lastY = window.scrollY, vel = 0;
     let pending = hiding ? q("[data-reveal],[data-split],[data-clip]").filter((el) => !el.classList.contains("in")) : [];
     const rafs = new Set<number>();
 
@@ -75,6 +81,23 @@ export function useMotion(key: unknown) {
         const x = c * parseFloat(el.dataset.drift || "0") * k;
         el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;
       });
+
+      // palavras acesas: da entrada do bloco (85% da tela) até 45%
+      illum.forEach((words) => {
+        if (!words.length) return;
+        const r = words[0].parentElement!.getBoundingClientRect();
+        const p = reduce ? 1 : clamp((vh * 0.85 - r.top) / (vh * 0.4), 0, 1);
+        words.forEach((w, i) => w.classList.toggle("lit", (i + 0.5) / words.length <= p));
+      });
+
+      // faixa: acelera um pouco conforme a velocidade do scroll e volta ao ritmo normal
+      if (!reduce) {
+        const dy = Math.abs(window.scrollY - lastY);
+        lastY = window.scrollY;
+        vel = Math.min(12, vel * 0.8 + dy * 0.12);
+        const a = mqAnim();
+        if (a) a.playbackRate = 1 + vel;
+      }
 
       stacks.forEach((cards) => {
         const tops = cards.map((c) => c.getBoundingClientRect().top);
@@ -140,4 +163,73 @@ export function useMotion(key: unknown) {
       q("[data-count][data-counted]").forEach((el) => { el.textContent = el.dataset.count || ""; });
     };
   }, [key]);
+}
+
+// Ponteiro (só em dispositivos com mouse e sem movimento reduzido):
+//  - profundidade: grava --mx/--my (-1..1, suavizados) no <html>; [data-depth] usa em translate.
+//  - cursor: ponto lilás em mix-blend que cresce sobre links/botões e mostra data-cursor.
+//  - ímã: [data-magnet] é puxado levemente na direção do ponteiro.
+export function usePointer() {
+  useEffect(() => {
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduce) return;
+    const root = document.documentElement;
+    let tx = 0, ty = 0, mx = 0, my = 0, px = -100, py = -100, cx = -100, cy = -100, raf = 0;
+    let sc = 10 / 84, st = 10 / 84; // escala do cursor (ponto de 10px → 44px ou 84px com rótulo)
+    let magnet: HTMLElement | null = null;
+
+    const cur = document.createElement("div");
+    cur.className = "rp-cur";
+    cur.setAttribute("aria-hidden", "true");
+    document.body.appendChild(cur);
+    root.classList.add("rp-nocursor");
+
+    const onMove = (e: PointerEvent) => {
+      tx = (e.clientX / innerWidth - 0.5) * 2;
+      ty = (e.clientY / innerHeight - 0.5) * 2;
+      px = e.clientX; py = e.clientY;
+      if (magnet) {
+        const r = magnet.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        magnet.style.translate = `${(dx * 0.22).toFixed(1)}px ${(dy * 0.3).toFixed(1)}px`;
+      }
+    };
+    const onOver = (e: PointerEvent) => {
+      const t = e.target as Element;
+      const hit = t.closest?.("a,button,[data-cursor]");
+      const lab = hit?.getAttribute("data-cursor") || "";
+      st = (hit ? (lab ? 84 : 44) : 10) / 84;
+      cur.textContent = lab;
+      const m = t.closest?.("[data-magnet]") as HTMLElement | null;
+      if (m !== magnet) { if (magnet) magnet.style.translate = ""; magnet = m; }
+    };
+    const onLeave = () => { cur.style.opacity = "0"; };
+    const onEnter = () => { cur.style.opacity = "1"; };
+    const loop = () => {
+      raf = requestAnimationFrame(loop);
+      mx += (tx - mx) * 0.06; my += (ty - my) * 0.06;
+      root.style.setProperty("--mx", mx.toFixed(3));
+      root.style.setProperty("--my", my.toFixed(3));
+      cx += (px - cx) * 0.22; cy += (py - cy) * 0.22;
+      sc += (st - sc) * 0.18;
+      cur.style.transform = `translate3d(${cx.toFixed(1)}px,${cy.toFixed(1)}px,0) translate(-50%,-50%) scale(${sc.toFixed(3)})`;
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.addEventListener("pointerover", onOver);
+    document.documentElement.addEventListener("pointerleave", onLeave);
+    document.documentElement.addEventListener("pointerenter", onEnter);
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerover", onOver);
+      document.documentElement.removeEventListener("pointerleave", onLeave);
+      document.documentElement.removeEventListener("pointerenter", onEnter);
+      cur.remove();
+      root.classList.remove("rp-nocursor");
+      root.style.removeProperty("--mx");
+      root.style.removeProperty("--my");
+    };
+  }, []);
 }

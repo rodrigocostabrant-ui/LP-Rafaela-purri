@@ -1,5 +1,5 @@
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #F6F4F1; color: #111; font-family: var(--font-montserrat), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: #F6F4F1; color: #111; font-family: var(--font-sans), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: #3D1A5B; text-decoration: none; }
 a:hover { color: #2A0F3D; }
 * { box-sizing: border-box; }
@@ -9,3 +9,11 @@ a:hover { color: #2A0F3D; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Superfícies do navegador na paleta da marca */
+::selection { background: #B79BE0; color: #2A0F3D; }
+html { caret-color: #B79BE0; scrollbar-color: #3D1A5B #F6F4F1; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #F6F4F1; }
+::-webkit-scrollbar-thumb { background: #3D1A5B; border-radius: 999px; border: 2px solid #F6F4F1; }
+a { text-underline-offset: .2em; }

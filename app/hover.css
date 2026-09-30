@@ -1,9 +1,12 @@
 /* Estados de hover do design (style-hover no Claude Design). */
-.hv1:hover{padding-left:20px !important;background:rgba(183,155,224,.08) !important}
-.hv2:hover{padding-left:48px !important;background:rgba(183,155,224,.08) !important}
+.hv1 > *, .hv2 > *, .hv5 > * { transition: transform .45s cubic-bezier(.16,1,.3,1); }
+.hv1:hover > *, .hv2:hover > * { transform: translateX(20px); }
+.hv5:hover > * { transform: translateX(14px); }
+.hv1:hover{background:rgba(183,155,224,.08) !important}
+.hv2:hover{background:rgba(183,155,224,.08) !important}
 .hv3:hover{background:#3D1A5B !important;color:#F6F4F1 !important}
 .hv4:hover{background:#2A0F3D !important;color:#F6F4F1 !important}
-.hv5:hover{padding-left:14px !important;background:rgba(183,155,224,.14) !important}
+.hv5:hover{background:rgba(183,155,224,.14) !important}
 .hv6:hover{background:#F6F4F1 !important;color:#2A0F3D !important}
 .hv7:hover{background:#3D1A5B !important;color:#F6F4F1 !important}
 .hv8:hover{background:#2A0F3D !important;color:#F6F4F1 !important}
