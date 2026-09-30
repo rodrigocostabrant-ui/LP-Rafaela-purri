@@ -3,6 +3,7 @@
 // Markup convertido do Claude Design (Dra Rafaela Purri - Previa.dc.html).
 // Textos de listas e contatos ficam em content/site.ts; comportamento em useLanding.ts;
 // movimento (revelações, parallax, pilha de cards) em useMotion.ts + app/motion.css.
+import Image from "next/image";
 import { Fragment, type CSSProperties } from "react";
 import { useLanding } from "./useLanding";
 import { useMotion } from "./useMotion";
@@ -116,10 +117,8 @@ export default function Landing() {
             </div>
           </div>
           <div data-speed=".07" style={{ display: "flex", justifyContent: "center" }}>
-            <div data-hclip style={{ width: "min(100%,420px)", aspectRatio: "4/5", borderRadius: "999px 999px 0 0", background: "repeating-linear-gradient(135deg,rgba(183,155,224,.16) 0 10px,rgba(183,155,224,0) 10px 20px)", border: "1px solid rgba(183,155,224,.4)", display: "flex", alignItems: "flex-end", justifyContent: "center", padding: "24px", font: "500 10px/1.5 ui-monospace,Menlo,monospace", letterSpacing: ".08em", color: "#B79BE0", textAlign: "center" }}>
-              {"RETRATO DE ESTÚDIO · VESTIDO PRETO"}
-              <br />
-              {"(foto profissional da cliente)"}
+            <div data-hclip style={{ position: "relative", overflow: "hidden", width: "min(100%,420px)", aspectRatio: "4/5", borderRadius: "999px 999px 0 0", background: "#3D1A5B", border: "1px solid rgba(183,155,224,.4)" }}>
+              <Image src="/images/rafaela-retrato-estudio.webp" alt="Dra. Rafaela Purri, biomédica esteta, em retrato de estúdio" fill priority sizes="(max-width: 900px) 90vw, 420px" style={{ objectFit: "cover", objectPosition: "45% 0%" }} />
             </div>
           </div>
         </div>

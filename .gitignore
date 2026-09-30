@@ -10,3 +10,6 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# fotos originais ficam locais
+imagens/
